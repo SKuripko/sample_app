@@ -103,4 +103,5 @@ RSpec.configure do |config|
   require File.expand_path("../../config/environment", __FILE__)
   require 'rspec/rails'
   config.include Rails.application.routes.url_helpers
+  config.use_transactional_fixtures = false
 end
