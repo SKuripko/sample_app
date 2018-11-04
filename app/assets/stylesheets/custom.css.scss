@@ -1,5 +1,11 @@
 @import "bootstrap";
 
+@mixin box_sizing {
+	-moz-box-sizing: border-box;
+	-wtbkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
 /* universal */
 
 html {
@@ -8,6 +14,7 @@ html {
 
 body {
 	padding-top: 60px;
+	text-align: center;
 }
 
 section {
@@ -101,3 +108,34 @@ footer {
     	}
 	}    	
 }
+
+/* forms */
+
+input, textarea, select, .unediatable-input {
+	border: 1px solid #bbb;
+	width: 100%;
+	margin-bottom: 15px;
+	display: block;
+	@include box_sizing;
+}
+
+input {
+	height: auto !important;
+	width: 300px;
+	display: table;
+	margin: 10px auto 5px;
+}
+
+#error_explanation {
+	color: #f00;
+	ul {
+		list-style: none;
+		margin: 10px auto 5px;
+	}
+}
+
+.field_with_errors {
+	@extend .countrol-group !optional;
+	@extend .error !optional;
+}
+
