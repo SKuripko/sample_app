@@ -25,7 +25,10 @@ gem 'jbuilder', '~> 2.5'
 gem 'execjs'
 gem 'bootstrap-sass'
 gem 'bcrypt-ruby'
-
+gem 'rest-client'
+gem 'jquery-rails'
+gem 'jquery-ui-rails'
+gem 'rails-ujs'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password

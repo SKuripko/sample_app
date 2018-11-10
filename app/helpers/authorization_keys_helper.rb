@@ -1,0 +1,2 @@
+module AuthorizationKeysHelper
+end
