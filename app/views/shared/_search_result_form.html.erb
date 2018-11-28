@@ -1,0 +1,19 @@
+<%= form_tag('/sro', method: :post, route: authorization_path) do |f| %>
+  <div class="form-group">
+    <div class="col">
+      <label for="validationDefault01" class="form-label">SRO</label>
+      <input type="text" class="form-control" name="sro" placeholder="SRO" required>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="col">
+      <label for="validationDefault02" class="form-label">Authorization key</label>
+      <input type="text" class="form-control" name="auth_key" placeholder="Authorization key" required>
+    </div>
+  </div>
+
+  	  <button class="btn btn-primary" type="submit">Submit</button>
+      <i class="icon-spinner icon-spin icon-large"></i>
+<% end %>
+

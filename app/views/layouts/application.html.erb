@@ -6,23 +6,6 @@
     <%= csp_meta_tag %>
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
     <script type="text/javascript">
-      $(document).ready(function(){
-        $('form input[name="departure1"]').prop("disabled", true);
-        $('form input[name="arrival1"]').prop("disabled", true);
-        $('form input[name="date1"]').prop("disabled", true);
-        $(".agree").click(function(){
-            if($(this).prop("checked") == true){
-                $('form input[name="departure1"]').prop("disabled", false);
-                $('form input[name="arrival1"]').prop("disabled", false);
-                $('form input[name="date1"]').prop("disabled", false);
-            }
-            else if($(this).prop("checked") == false){
-                $('form input[name="departure1"]').prop("disabled", true);
-                $('form input[name="arrival1"]').prop("disabled", true);
-                $('form input[name="date1"]').prop("disabled", true);
-            }
-          });
-        });
     </script>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': true %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': true %>

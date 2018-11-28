@@ -1,10 +1,8 @@
 <% provide(:title, 'Search request') %>
 <h1>Search request</h1>
 <div class="row">
-	<div class="search">
+	<%= render 'shared/sidebar_form' %>
+	<div class="container col-md-9">
 		<%= render 'shared/search_form' %>
-	</div>
-	<div class="container">
-		<%= @results %>
 	</div>
 </div>

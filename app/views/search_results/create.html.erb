@@ -1,0 +1,9 @@
+<% provide(:title, 'Search results') %>
+<h1>Search results</h1>
+<div class="row">
+	<%= render 'shared/sidebar_form' %>	
+	<div class="container col-md-9">
+	  <%= render 'shared/search_result_form' %>
+      <pre><%= JSON.pretty_generate(@results) %></pre>	
+	</div>
+</div>

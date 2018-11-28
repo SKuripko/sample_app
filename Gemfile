@@ -29,6 +29,8 @@ gem 'rest-client'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'rails-ujs'
+gem 'bootstrap-datepicker-rails'
+gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.2'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password

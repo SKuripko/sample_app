@@ -13,8 +13,10 @@ Rails.application.routes.draw do
 	resources :authorization_keys, only: [:new, :create]
 	match '/authorization', to: 'authorization_keys#new',    via: 'get'
 	match '/authorization', to: 'authorization_keys#create', via: 'post'
-	match '/search',        to: 'searchs#new',                via: 'get'
-	match '/search',        to: 'searchs#create',             via: 'post'
+	match '/search',        to: 'searchs#new',               via: 'get'
+	match '/search',        to: 'searchs#create',            via: 'post'
+	match '/sro',           to: 'search_results#new',        via: 'get'
+	match '/sro',           to: 'search_results#create',        via: 'post'	    
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

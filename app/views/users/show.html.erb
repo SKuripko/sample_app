@@ -1,13 +1,9 @@
 <% provide(:title, @user.name) %>
 <h1><%= @user.name %></h1>
+<div class="row">
+  <%= render 'shared/sidebar_form' %>
+	<div class="container col-md-9">
+	  <%= render 'shared/authorizationkey_form' %>
+  </div>
+</div>
 
-
-<div class="row" id="userbar">
-  <aside class="span4">
-    <section>
-    	<%= link_to "Authorization", authorization_path %>
-    </section>  
-    <section>
-		<%= link_to "Search request", search_path %>    	
-    </section>
-  </aside>

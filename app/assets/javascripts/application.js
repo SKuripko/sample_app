@@ -14,4 +14,26 @@
 //= require jquery_ujs
 //= require bootstrap
 //= require turbolinks
+//= require bootstrap-datepicker
 //= require_tree .
+
+      $(document).ready(function(){
+        $('form input[name="segments[1][from]"]').prop("disabled", true);
+        $('form input[name="segments[1][to]"]').prop("disabled", true);
+        $('form input[name="segments[1][date]"]').prop("disabled", true);
+        $(".agree").click(function(){
+            if($(this).prop("checked") == true){
+                $('form input[name="segments[1][from]"]').prop("disabled", false);
+                $('form input[name="segments[1][to]"]').prop("disabled", false);
+                $('form input[name="segments[1][date]"]').prop("disabled", false);
+            }
+            else if($(this).prop("checked") == false){
+                $('form input[name="segments[1][from]"]').prop("disabled", true);
+                $('form input[name="segments[1][to]"]').prop("disabled", true);
+                $('form input[name="segments[1][date]"]').prop("disabled", true);
+            }
+          });
+        });
+      $(document).ready(function(){
+        $('.datepicker').datepicker();
+      });
