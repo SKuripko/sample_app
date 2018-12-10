@@ -8,15 +8,23 @@ Rails.application.routes.draw do
 	match '/help',    to: 'static_pages#help',      via: 'get'
 	match '/about',   to: 'static_pages#about',     via: 'get'
 	match '/contact', to: 'static_pages#contact',   via: 'get'
-	match '/help', to: 'static_pages#help',         via: 'get'
+	match '/help',    to: 'static_pages#help',      via: 'get'
 
 	resources :authorization_keys, only: [:new, :create]
 	match '/authorization', to: 'authorization_keys#new',    via: 'get'
 	match '/authorization', to: 'authorization_keys#create', via: 'post'
 	match '/search',        to: 'searchs#new',               via: 'get'
 	match '/search',        to: 'searchs#create',            via: 'post'
-	match '/sro',           to: 'search_results#new',        via: 'get'
-	match '/sro',           to: 'search_results#create',        via: 'post'	    
-
+	match '/searchresult',  to: 'search_results#new',        via: 'get'
+	match '/searchresult',  to: 'search_results#create',     via: 'post'
+	match '/flightinfo',    to: 'flights_info#new',          via: 'get'	    
+	match '/flightinfo',    to: 'flights_info#create',       via: 'post'
+	match '/farefamily',    to: 'fare_families#new',         via: 'get'	    
+	match '/farefamily',    to: 'fare_families#create',      via: 'post'
+	match '/farecondition', to: 'fare_conditions#new',       via: 'get'	    
+	match '/farecondition', to: 'fare_conditions#create',    via: 'post'
+	match '/book',          to: 'bookings#new',              via: 'get'	    
+	match '/book',          to: 'bookings#create',           via: 'post'	
+	
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

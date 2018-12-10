@@ -1,0 +1,8 @@
+<% provide(:title, 'Book request') %>
+<div class="row">
+	<%= render 'shared/sidebar_form' %>	
+	<div class="col-md-9">
+	  <%= render 'shared/book_form' %>
+      <pre><%= JSON.pretty_generate(@results) %></pre>		  
+	</div>
+</div>

@@ -7,16 +7,15 @@ class SearchsController < ApplicationController
   	end
 
   	def create
-  	  # byebug
+  	   byebug
   	  @results = SearchRequest.new(request_params).post
   	  @results = JSON.parse(@results)
   	end
 
 	private
 		def request_params
-			byebug
 			result = {
-				segments: params[:segments].as_json,
+				segments: segments_params,
 				adt:      params[:adult],
 				chd:      params[:child],
 				inf:      params[:child],
@@ -27,15 +26,15 @@ class SearchsController < ApplicationController
 		end
 
 		def segments_params
-			byebug
+			
 			result = {}
-			params[:segments].each do |segment, index|
-				byebug
-				result["#{index}"] =  {
+			params[:segments].each do |index, segment|
+				result[index] =  {
 					from: segment['from'],
 					to:   segment['to'],
 					date: segment['date']
 				}	
 			end
+			result
 		end				
 end

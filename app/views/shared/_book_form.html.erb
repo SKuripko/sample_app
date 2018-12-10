@@ -1,0 +1,99 @@
+<%= form_tag('/book', method: :post, route: book_path) do |f| %>
+
+  <div class="form-tid col-md-12">
+      <label for="validationDefault01" class="form-label">Reccomendation(Tid)</label>
+      <input type="text" class="form-control" name="tid" placeholder="TID" required>
+  </div>
+  <div class="form-payer-name col-md-12">
+      <label for="validationDefault01" class="form-label">Payer name</label>
+      <input type="text" class="form-control" name="payer_name" placeholder="Client name" required>
+  </div>
+  <div class="form-client-mail col-md-12">
+      <label for="validationDefault01" class="form-label">Client email </label>
+      <input type="text" class="form-control" name="client_email" placeholder="Client email" required>
+  </div>
+  <div class="form-client-phone col-md-12">
+      <label for="validationDefault01" class="form-label">Client phone</label>
+      <input type="text" class="form-control" name="client_phone" placeholder="Client phone" required>
+  </div>
+  <div class="form-auth-key col-md-12">
+      <label for="validationDefault02" class="form-label">Authorization key</label>
+      <input type="text" class="form-control" name="auth_key" placeholder="Authorization key" required>
+  </div>
+    <div class="form-agent-fee col-md-6">
+      <label for="AgentAffiliateFee">Agent comission</label>
+      <input type="text" name="agent_affiliate_fee" class="form-control" placeholder="Agent comission">
+    </div>
+    <div class="form-partner-fee col-md-6">
+      <label for="PartnerAffiliateFee">Partner comission</label>
+      <input type="text" name="partner_affiliate_fee" class="form-control" placeholder="Partner comission">
+    </div>      
+
+    <br>
+
+  <div class="passengers">
+    <div class="passengers_fields">
+      <div class="form-group row passenger">
+        <div class="col-lg-3">
+          <label for="inputPassengerType">Passenger type</label>
+            <select class="form-control form-control-sm" name="passengers[0][age]" id="SelectPassengerType">
+              <option value="adt">Adult</option>
+              <option value="chd">Child</option>
+              <option value="inf">Infant</option>
+            </select>
+        </div>      
+        <div class="col-lg-3">
+          <label for="ValidationFirstName">First name</label>
+          <input type="text" name="passengers[0][firstname]" class="form-control" placeholder="First name" required>
+        </div>
+        <div class="col-lg-3">
+          <label for="ValidationLastName">Last name</label>
+          <input type="text" name="passengers[0][lastname]" class="form-control" placeholder="Last name" required>
+        </div>
+        <div class="col-lg-3">
+          <label for="MiddleName">Middle name</label>
+          <input type="text" name="passengers[0][middlename]" class="form-control" placeholder="Middle name">
+        </div>
+        <div class="col-lg-3">
+          <label for="inputGender">Gender</label>
+            <select class="form-control form-control-sm" name="passengers[0][gender]" id="SelectGender">
+              <option value="M">Male</option>
+              <option value="F">Female</option>
+            </select>
+        </div>      
+        <div class="col-lg-3">
+          <label for="ValidationFirstName">Birthday</label>
+          <input type="text" name="passengers[0][birthdate]" class="form-control" placeholder="Birthday" required>
+        </div>
+        <div class="col-lg-3">
+          <label for="DocNum">Docnum</label>
+          <input type="text" name="passengers[0][docnum]" class="form-control" placeholder="Doc number">
+        </div>
+        <div class="col-lg-3">
+          <label for="Citizwnship">Citizenship</label>
+          <input type="text" name="passengers[0][citizen]" class="form-control" placeholder="Citiewnship" value="RU">
+        </div>                                                     
+        <div class="col-lg-3">
+          <label for="inputDocType">Doc type</label>
+            <select class="form-control form-control-sm" name="passengers[0][doctype]" id="SelectDocType">
+              <option value="C">Паспорт РФ</option>
+              <option value="P">Загран паспорт</option>
+              <option value="B">Свидетельство о рождении</option>
+              <option value="A">Иностранный документ</option>
+            </select>
+        </div>
+        <div class="col-lg-3">
+          <label for="PassengerPhone">Phone</label>
+          <input type="text" name="passengers[0][phone]" class="form-control" placeholder="Passenger phone">
+        </div>
+        <div class="col-lg-3">
+          <label for="PassengerEmail">Email</label>
+          <input type="text" name="passengers[0][email]" class="form-control" placeholder="Passenger email">
+        </div>
+      </div>
+    </div> 
+      <button type="button" class="btn btn-primary AddPassenger">Add passenger</button>                     
+  </div> 
+  <br>
+  <button class="btn btn-primary BookRequest" type="submit">Book</button>
+<% end %>
