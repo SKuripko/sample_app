@@ -1,6 +1,7 @@
-class SearchResult < BaseRequest
+# frozen_string_literal: true
 
-	def path
-		BASE_URI + 'avia/search-result?'
-	end	
-end	
+class SearchResult < BaseRequest
+  def path
+    'avia/search-result'
+  end
+end

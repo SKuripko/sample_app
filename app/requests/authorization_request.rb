@@ -1,5 +1,7 @@
+# frozen_string_literal: true
+
 class AuthorizationRequest < BaseRequest
-	def path
-    	BASE_URI + 'user/login?'
-	end  	
+  def path
+    'user/login'
+  end
 end

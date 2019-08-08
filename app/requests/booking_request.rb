@@ -1,6 +1,7 @@
-class BookingRequest < BaseRequest
+# frozen_string_literal: true
 
-	def path
-		BASE_URI + 'avia/book?'
-	end	
-end	
+class BookingRequest < BaseRequest
+  def path
+    'avia/book'
+  end
+end

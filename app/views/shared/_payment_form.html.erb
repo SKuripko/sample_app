@@ -1,0 +1,20 @@
+<%= form_tag('/payment', method: :post, route: payment_path) do |f| %>
+  <div class="payments_fields">
+    <div class="form-group row payments">
+      <div class="col">
+        <label for="Select_API_URL">API</label>
+        <%= select_tag(:api_url,options_from_collection_for_select(BaseUrl.all, :value, :name)) %>
+      </div>
+      <div class="col">
+        <label for="validationDefault01" class="form-label">Billing number</label>
+        <input type="text" class="form-control" name="billing" placeholder="Billing number" required>
+      </div>
+      <div class="col">
+        <label for="validationDefault02" class="form-label">Authorization key</label>
+        <input type="text" class="form-control" name="auth_key" id="auth_key" placeholder="Authorization key" required>
+      </div>                 
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>     
+<% end %>
+

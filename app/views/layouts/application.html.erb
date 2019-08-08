@@ -4,11 +4,27 @@
     <title><%= full_title(yield(:title)) %></title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <%= include_gon %>
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script type="text/javascript"></script>
+    <script src="https://cdn.anychart.com/releases/v8/js/anychart-base.min.js" type="text/javascript"></script>
+    
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': true %>
     <%= javascript_include_tag 'application',               'data-turbolinks-track': true %>
     <%= javascript_include_tag 'bookings',                  'data-turbolinks-track': true %>
+    <%= javascript_include_tag 'authorization_keys',        'data-turbolinks-track': true %>
+    <%= javascript_include_tag 'search_results',            'data-turbolinks-track': true %>
+    <%= javascript_include_tag 'bookings_info',             'data-turbolinks-track': true %>
+    <%= javascript_include_tag 'cancel_bookings',           'data-turbolinks-track': true %>
+    <%= javascript_include_tag 'fare_conditions',           'data-turbolinks-track': true %>
+    <%= javascript_include_tag 'fare_families',             'data-turbolinks-track': true %>
+    <%= javascript_include_tag 'flights_info',              'data-turbolinks-track': true %>
+    <%= javascript_include_tag 'payment_bookings',          'data-turbolinks-track': true %>
+    <%= javascript_include_tag 'payments_info',             'data-turbolinks-track': true %>
+    <%= javascript_include_tag 'searchs',                   'data-turbolinks-track': true %>
+    <%= javascript_include_tag 'passenger_generator',       'data-turbolinks-track': true %>
+    <%= javascript_include_tag 'hits',                      'data-turbolinks-track': true %>    
     <%= render 'layouts/shim' %>
   </head>
   <body>

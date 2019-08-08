@@ -1,6 +1,7 @@
-class FareFamily < BaseRequest
+# frozen_string_literal: true
 
-	def path
-		BASE_URI + 'avia/flightff?'
-	end	
-end	
+class FareFamily < BaseRequest
+  def path
+    'avia/flightff?'
+  end
+end

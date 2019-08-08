@@ -1,25 +1,102 @@
+
 # SQLite version 3.x
 #   gem install sqlite3
 #
 #   Ensure the SQLite 3 gem is defined in your Gemfile
 #   gem 'sqlite3'
 #
-default: &default
-  adapter: sqlite3
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  timeout: 5000
+# default: &default
+#   adapter: sqlite3
+#   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+#   timeout: 5000
 
+# development:
+#   <<: *default
+#   database: db/development.sqlite3
+
+# # Warning: The database defined as "test" will be erased and
+# # re-generated from your development database when you run "rake".
+# # Do not set this db to the same as development or production.
+# test:
+#   <<: *default
+#   database: db/test.sqlite3
+
+# production:
+#   <<: *default
+#   database: db/production.sqlite3
 development:
-  <<: *default
-  database: db/development.sqlite3
+  adapter: postgresql
+  encoding: utf8
+  database: my_develop
+  pool: 5
+  username: skuripko
+  password: ke4map5S
 
-# Warning: The database defined as "test" will be erased and
-# re-generated from your development database when you run "rake".
-# Do not set this db to the same as development or production.
-test:
-  <<: *default
-  database: db/test.sqlite3
+dev_ma:
+  adapter: postgresql
+  encoding: utf8
+  database: bol
+  username: bol
+  password: 8u4w1y8fMdaK6HFc6Zbu
+  host: 10.2.4.193
+  port: 5432
+  schema_search_path: "tol"  
 
-production:
-  <<: *default
-  database: db/production.sqlite3
+# test:
+#   adapter: postgresql
+#   encoding: utf8
+#   database: QCCR2O
+#   pool: 5
+#   username: skuripko
+#   password: ke4map5S
+
+# production:
+#   adapter: postgresql
+#   encoding: utf8
+#   database: QCCR2O
+#   pool: 5
+#   username: skuripko
+#   password: ke4map5S    
+
+#production:
+#  <<: *default
+#  database: db/production.sqlite3
+# default: &default
+#   #adapter: postgresql
+#   #encoding: utf8
+#   #database: gis_pre
+#   #username: postgres
+#   #password: 5hRxJl54cQ
+#   #host: 148.251.235.166
+#   adapter: postgresql
+#   encoding: utf8
+#   database: core
+#   username: s.kuripko
+#   password: Yxj698aHkDJ5oB
+#   host: 10.2.4.153
+#   port: 5432
+# #  pglog:
+#    adapter: postgresql
+#    encoding: utf8
+#    database: pglog
+#    username: postgres
+#    password: 5hRxJl54cQ
+#    host: 10.2.4.95
+#    port: 5432
+    
+  # adapter: postgresql
+  # encoding: utf8
+  # database: gis
+  # username: mgrishko
+  # password:
+  # host: 127.0.0.1
+  # port: 5432
+
+# development:
+#   <<: *default
+
+# test:
+#   <<: *default
+
+# production:
+#   <<: *default

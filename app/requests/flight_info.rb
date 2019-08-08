@@ -1,6 +1,7 @@
-class FlightInfo < BaseRequest
+# frozen_string_literal: true
 
-	def path
-		BASE_URI + 'avia/flight-info?'
-	end	
-end	
+class FlightInfo < BaseRequest
+  def path
+    'avia/flight-info'
+  end
+end

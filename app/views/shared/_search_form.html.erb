@@ -1,40 +1,44 @@
-<%= form_tag('/search', method: :post, route: search_path) do |f| %>
+<%= form_tag('/search', method: :post, route: search_path, onSubmit: 'saveSearchSettings()') do |f| %>
 	<%= render 'shared/error_messages' %>
 
     <div class="segments_fields">
+      <div class="col">
+        <label for="Select_API_URL">API</label>
+        <%= select_tag(:api_url,options_from_collection_for_select(BaseUrl.all, :value, :name)) %>
+      </div>      
       <div class="form-group row segment">
         <div class="col-md-4">
          	<label for="validationDeparture">Departure</label>
-         	<input type="text" name="segments[0][from]" class="form-control" placeholder="Deparute iata" value="MOW" required>
+         	<input type="text" name="segments[0][from]" id="from_0" class="from form-control" placeholder="Deparute iata" value="" required>
         </div>
         <div class="col-md-4">
         	<label for="validationArrival">Arrival</label>
-      		<input type="text" name="segments[0][to]" class="form-control" placeholder="Arrival iata" value="SIP" required>
+      		<input type="text" name="segments[0][to]" id="to_0" class="to form-control" placeholder="Arrival iata" value="" required>
         </div>
-        <div class="col-md-4 input-prepend">
+        <div class="col-md-4">
         	<label for="date">Date</label>
-          <input type="text" name="segments[0][date]" class="form-control" data-provide='datepicker' data-date-format="dd-mm-yyyy">
+          <input type="text" name="segments[0][date]" id="date_0" class="date form-control" data-provide='datepicker' data-date-format="dd-mm-yyyy">
         </div>    		  
     	</div>
      
 
       <div class="сheckbox">
-        <label>
-          <input type="checkbox" class="agree">Обратно</label>
+        <input id="agree" type="checkbox" name="agree" value="agree">
+        <label for="agree">Обратно</label>
       </div>
   
      	<div class="form-group row segment">
-     	  <div class="col-md-4">
+     	  <div class="col-md-4 from[1]">
          	<label for="validationDeparture1">Departure</label>
-         	<input type="text" name="segments[1][from]" class="form-control" placeholder="Deparute iata" required>
+         	<input type="text" name="segments[1][from]" id="from_1" class="from form-control" placeholder="Deparute iata" required>
      	  </div>
-     	  <div class="col-md-4">
+     	  <div class="col-md-4 to[1]">
          	<label for="validationArrival1">Arrival</label>
-         	<input type="text" name="segments[1][to]" class="form-control" placeholder="Arrival iata" required>
+         	<input type="text" name="segments[1][to]" id="to_1" class="to form-control" placeholder="Arrival iata" required>
      	  </div>
-     	  <div class="col-md-4">
+     	  <div class="col-md-4 date[1]">
          	<label for="date">Date</label>
-         	<input type="text" name="segments[1][date]" class="form-control" data-provide="datepicker" data-date-format="dd-mm-yyyy">  
+         	<input type="text" name="segments[1][date]" id="date_1" class="date form-control" data-provide="datepicker" data-date-format="dd-mm-yyyy">  
      	  </div>            
      	</div>
     </div>  
@@ -44,34 +48,34 @@
 		<div class="form-group row">
 		  <div class="col-md-4">
  		  	<label for="validationAdultCount">Adult</label>
- 		  	<input type="text" name="adult" class="form-control" placeholder="" required>
+ 		  	<input type="text" name="adult" id="adult" class="form-control" placeholder="" required>
  		  </div>
 		  <div class="col-md-4">
 		  	<label for="inputChildCount">Child</label>
-   			<input type="text" name="child" class="form-control">
+   			<input type="text" name="child" id="child" class="form-control">
  		  </div>
  		  <div class="col-md-4">
 		  	<label for="inputInfantcount">Infant</label>
- 		  	<input type="text" name="infant" class="form-control">
+ 		  	<input type="text" name="infant" id="infant" class="form-control">
  		  </div>    		  
   	</div>
 
 		<div class="form-group row">
  		  <div class="col-md-4">
 		  	<label for="inputFilterAirlines">Filter airlines</label>
- 		  	<input type="text" name="includeairlines" class="form-control">
+ 		  	<input type="text" name="includeairlines" id="include_airlines" class="form-control">
  		  </div>
  		  <div class="col-md-4">
       	<label for="inputIncludeGds">Include gds</label>
-    		<input type="text" name="includegds" class="form-control">
+    		<input type="text" name="includegds" id="include_gds" class="form-control">
       </div>
       <div class="col-md-4">
        	<label for="inputExcludeGds">Exclude gds</label>
- 		  	<input type="text" name="excludegds" class="form-control">
+ 		  	<input type="text" name="excludegds" id="exclude_gds" class="form-control">
  		  </div>    		 	
       <div class="col-md-4">
 	  	  <label for="valildationAuthKey">Authorization key</label>
-	  	  <input type="text" name="auth_key" class="form-control" required>
+	  	  <input type="text" name="auth_key" id="auth_key" class="form-control" required>
       </div>  
   	  <div class="col-md-4">
 			  <label for="inputServiceclass">Service class</label>
@@ -87,11 +91,5 @@
           <input type="checkbox" class="direct_only" name="is_direct_only">Только прямые</label>
       </div>
     </div>
-  <%= submit_tag "Search", class: "btn btn-large btn-primary" %>      
+  <button type="submit" class="btn btn-primary">Submit</button>      
 <% end %>
-
-
-
-
-		
-

@@ -1,0 +1,54 @@
+<% provide(:title, 'Conversion statistics') %>
+<div class="row">
+	<%= render 'shared/sidebar_form' %>	
+	<div class="col-md-9">
+		<%= render 'shared/hit_form' %>	
+        <table id="results" class="table">
+          <thead>
+            <tr>
+              <th scope="col">Total</th>
+              <th scope="col">Supplier</th>
+              <th scope="col">GDS ID</th>
+              <th scope="col">Booking status</th>
+              <th scope="col">Total Book</th>              
+              <th scope="col">Booking percent</th>              
+              <th scope="col">Payment status</th>
+              <th scope="col">Total pays</th>
+              <th scope="col">Payment percent</th>
+              <th scope="col">Provider</th>
+              <th scope="col">Channel</th>              
+            </tr>
+          </thead>
+          <tbody class="results">  
+          <% @hits[:items].each do |item|%>      	  	
+              <tr>
+                 <td><%= item[:hit] %></td>
+                 <td><%= link_to item[:supplier_code], supplier_code: item[:supplier_code], date_from: @date_from, date_to: @date_to %></td>
+                 <td><%= item[:gds_id] %></td>
+                 <td><%= item[:book_status] %></td>
+                 <td><%= item[:total_book] %></td>                 
+                 <td><%= item[:book_percent].round(2) %>%</td>
+                 <td><%= item[:pay_status] %></td>
+                 <td><%= item[:total_pay] %></td>
+                 <td><%= item[:payment_percent].round(2) %>%</td>                                  
+                 <td><%= link_to item[:provider_name], provider_name: item[:provider_name], date_from: @date_from, date_to: @date_to %></td>
+                 <td><%= item[:channel] %></td>
+              </tr>
+              <% end %>
+              <tr>
+                 <td><%= @hits[:total][:hits] %></td>
+                 <td>&nbsp;</td>
+                 <td>&nbsp;</td>
+                 <td>&nbsp;</td>
+                 <td><%= @hits[:total][:book] %></td>                 
+                 <td><%= @hits[:total][:total_book_percent].round(2) %>%</td>
+                 <td>&nbsp;</td>
+                 <td><%= @hits[:total][:pays] %></td>
+                 <td><%= @hits[:total][:total_payment_percent].round(2) %>%</td>              
+                 <td>&nbsp;</td>
+                 <td>&nbsp;</td>
+              </tr>                                       
+          </tbody>
+        </table>						
+	</div>
+</div>

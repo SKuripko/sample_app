@@ -1,6 +1,7 @@
-class FareCondition < BaseRequest
+# frozen_string_literal: true
 
-	def path
-		BASE_URI + 'avia/rules?'
-	end	
-end	
+class FareCondition < BaseRequest
+  def path
+    'avia/rules?'
+  end
+end

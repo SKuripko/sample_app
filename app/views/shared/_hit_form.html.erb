@@ -1,0 +1,20 @@
+<%= form_tag('/hits',method: :get, route: hits_path, onSubmit: 'saveHitRequestSettings()') do |f| %>
+    <div class="conversion_fields">
+      <div class="form-group row conversion">
+        <div class="col-lg-3">
+          <label for="Select_Channel">Channel</label>
+          <%= text_field_tag :channel %>
+        </div>
+        <div class="col-lg-3">
+          <label for="date">Date from</label>
+          <input type="text" name="date_from" id="date_from" class="date form-control" data-provide='datepicker' data-date-format="dd-mm-yyyy" autocomplete="off">
+        </div>
+        <div class="col-lg-3">
+          <label for="date">Date to</label>
+          <input type="text" name="date_to" id="date_to" class="date form-control" data-provide='datepicker' data-date-format="dd-mm-yyyy" autocomplete="off">
+        </div>        
+          <button type="submit" class="btn btn-primary inline">Submit</button>          
+      </div>
+    </div>
+    <div id="conversion"></div>        
+<% end %>

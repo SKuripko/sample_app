@@ -26,8 +26,8 @@ body {
 
 /* typography */
 
-h1, h2 ,h3 ,h4 ,h5, h6 {
-	line-height: 1;
+h1, h2 ,h3  {
+  line-height: 1;
   text-align: center;
 }
 
@@ -45,6 +45,9 @@ h2 {
 	text-align: center;
 	font-weight: normal;
 	color: #A9A9A9;
+}
+h5 {
+	margin-left: 15px;
 }
 
 p {
@@ -83,11 +86,7 @@ p {
 	@extend .error !optional;
 }
 
-.col {
-	width: 30%;
-	line-height: 15px;
-	height: 70px;
-}
+
 hr { 
     display: block;
     margin-top: 0.5em;
@@ -96,4 +95,8 @@ hr {
     margin-right: auto;
     border-style: inset;
     border-width: 1px;
+}
+
+.text {
+	margin-left: 15px;
 }
