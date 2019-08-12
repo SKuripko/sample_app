@@ -20,10 +20,10 @@
             </tr>
           </thead>
           <tbody class="results">  
-          <% @hits[:items].each do |item|%>      	  	
+          <% @items[:items].each do |item|%>      	  	
               <tr>
                  <td><%= item[:hit] %></td>
-                 <td><%= link_to item[:supplier_code], supplier_code: item[:supplier_code], date_from: @date_from, date_to: @date_to %></td>
+                 <td><%= link_to item[:supplier_code], supplier_code: item[:supplier_code], date_from: @date_from, date_to: @date_to, channel: @channel %></td>
                  <td><%= item[:gds_id] %></td>
                  <td><%= item[:book_status] %></td>
                  <td><%= item[:total_book] %></td>                 
@@ -36,15 +36,15 @@
               </tr>
               <% end %>
               <tr>
-                 <td><%= @hits[:total][:hits] %></td>
+                 <td><%= @items[:total][:hits] %></td>
                  <td>&nbsp;</td>
                  <td>&nbsp;</td>
                  <td>&nbsp;</td>
-                 <td><%= @hits[:total][:book] %></td>                 
-                 <td><%= @hits[:total][:total_book_percent].round(2) %>%</td>
+                 <td><%= @items[:total][:book] %></td>                 
+                 <td><%= @items[:total][:total_book_percent].round(2) %>%</td>
                  <td>&nbsp;</td>
-                 <td><%= @hits[:total][:pays] %></td>
-                 <td><%= @hits[:total][:total_payment_percent].round(2) %>%</td>              
+                 <td><%= @items[:total][:pays] %></td>
+                 <td><%= @items[:total][:total_payment_percent].round(2) %>%</td>              
                  <td>&nbsp;</td>
                  <td>&nbsp;</td>
               </tr>                                       

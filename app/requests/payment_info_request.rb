@@ -2,6 +2,6 @@
 
 class PaymentInfo < BaseRequest
   def path
-  	'payment/getSystemParams'
-  end	
-end	
+    'payment/getSystemParams'
+  end
+end

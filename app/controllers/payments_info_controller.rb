@@ -17,6 +17,5 @@ class PaymentsInfoController < ApplicationController
       merchant_name:      'balanceMa',
       with_affiliate_fee: '0'
     }
-    end		
+    end
 end
-

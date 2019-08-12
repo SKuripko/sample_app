@@ -1,6 +1,7 @@
+# frozen_string_literal: true
+
 class BaseUrlsController < ApplicationController
-  def show
-  end
+  def show; end
 
   def new
     @api_url = BaseUrl.new

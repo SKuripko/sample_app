@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CancelBookingsController < ApplicationController
   def create
     @results = CancelBooking.new(request_params).post
@@ -13,5 +15,5 @@ class CancelBookingsController < ApplicationController
       auth_key:       params[:auth_key],
       billing_number: params[:billing]
     }
-    end		
+    end
 end

@@ -2,7 +2,7 @@
 
 class BaseRequest
   # BASE_URI = 'https://api.myagent.online/api/'
-#  BASE_URI = params[:url]
+  #  BASE_URI = params[:url]
 
   def initialize(params)
     @params  = params

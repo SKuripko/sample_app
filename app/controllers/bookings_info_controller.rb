@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class BookingsInfoController < ApplicationController
   def create
     @results = BookingInfo.new(request_params).post
@@ -13,5 +15,5 @@ class BookingsInfoController < ApplicationController
       auth_key:       params[:auth_key],
       billing_number: params[:billing]
     }
-    end	
+    end
 end

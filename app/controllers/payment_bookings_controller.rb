@@ -13,5 +13,5 @@ class PaymentBookingsController < ApplicationController
       auth_key:           params[:auth_key],
       billing_number:     params[:billing]
     }
-    end		
+    end
 end

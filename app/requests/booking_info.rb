@@ -2,6 +2,6 @@
 
 class BookingInfo < BaseRequest
   def path
-  	'avia/book-info'
-  end	
-end	
+    'avia/book-info'
+  end
+end

@@ -38,22 +38,22 @@ Rails.application.routes.draw do
   match '/payment',       to: 'payment_bookings#create',   via: 'post'
   match '/add_url',       to: 'base_urls#new',             via: 'get'
 
-  resources :hits, only: %i[index]  
-   #     hits GET    /hits(.:format)                                                                          hits#index   read collection GET
-   #          POST   /hits(.:format)                                                                          hits#create  create
-   #  new_hit GET    /hits/new(.:format)                                                                      hits#new     pre_create      GET
-   # edit_hit GET    /hits/:id/edit(.:format)                                                                 hits#edit    pre_update      GET
-   #      hit GET    /hits/:id(.:format)                                                                      hits#show    read            GET
-   #          PATCH  /hits/:id(.:format)                                                                      hits#update  update
-   #          PUT    /hits/:id(.:format)                                                                      hits#update  update
-   #          DELETE /hits/:id(.:format)                                                                      hits#destroy delete
+  resources :hits, only: %i[index]
+  #     hits GET    /hits(.:format)                                                                          hits#index   read collection GET
+  #          POST   /hits(.:format)                                                                          hits#create  create
+  #  new_hit GET    /hits/new(.:format)                                                                      hits#new     pre_create      GET
+  # edit_hit GET    /hits/:id/edit(.:format)                                                                 hits#edit    pre_update      GET
+  #      hit GET    /hits/:id(.:format)                                                                      hits#show    read            GET
+  #          PATCH  /hits/:id(.:format)                                                                      hits#update  update
+  #          PUT    /hits/:id(.:format)                                                                      hits#update  update
+  #          DELETE /hits/:id(.:format)                                                                      hits#destroy delete
 
   match '/hits/:supplier_code',           to: 'hits#show',                 via: 'get'
-  match '/hits',                          to: 'hits#index',                via: 'get'   
+  match '/hits',                          to: 'hits#index',                via: 'get'
   match '/hits',                          to: 'hits#create',               via: 'post'
 
-  resources :channels    
-  match '/channels',                      to: 'channels#show',             via: 'get' 
+  resources :channels
+  match '/channels',                      to: 'channels#show',             via: 'get'
   match '/channels',                      to: 'channels#index',            via: 'get'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
