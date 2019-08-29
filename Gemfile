@@ -3,7 +3,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.3.1'
+ruby '2.5.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.0'
@@ -25,7 +25,7 @@ gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'bcrypt-ruby'
 gem 'bootstrap-datepicker-rails'
-gem 'bootstrap-sass'
+gem 'bootstrap', '~> 4.3.1'
 gem 'execjs'
 gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.2'
 gem 'gon'
@@ -38,6 +38,8 @@ gem 'rails-ujs'
 gem 'rake', '~> 12.3.2'
 gem 'rest-client'
 gem 'rubocop', '~> 0.39.0'
+gem 'select2-rails'
+gem 'jquery-datatables'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password

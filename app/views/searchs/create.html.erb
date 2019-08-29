@@ -3,6 +3,6 @@
 	<%= render 'shared/sidebar_form' %>
 	<div class="col-md-9">
 	  <%= render 'shared/search_form' %>
-	  <pre><%= JSON.pretty_generate(@results) %></pre>
+	  <pre id="json"><%= JSON.pretty_generate(@search_results) %></pre>
 	</div>
 </div>

@@ -1,22 +1,20 @@
+<%= render 'shared/url_form' %>
 <%= form_tag('/authorization', method: :post, route: authorization_path, onSubmit: 'saveSettings()') do |f| %>
-    <div class="authorization_fields">
-      <div class="form-group row authorization">
-        <div class="col">
-          <label for="Select_API_URL">API</label>
-          <%= select_tag(:api_url, options_from_collection_for_select(BaseUrl.all, :value, :name)) %>
-        </div>
-        <li class="nav-item">
-          <%= link_to "Add new API URL", add_url_path %>  
-        </li>
-        <div class="col">
-          <label for="validationDefault01" class="form-label">Login</label>
-          <input type="text" class="form-control" name="login" id="login" placeholder="Login" required>
-        </div>
-        <div class="col">
-          <label for="validationDefault02" class="form-label">Password</label>
-          <input type="password" class="form-control" name="password" id="password" placeholder="Password" required>
-        </div>          
+  <div class="authorization_fields">
+      <div class="col-md-3">
+        <label for="Select_API_URL">API</label>
+        <%= select_tag(:api_url, options_from_collection_for_select(BaseUrl.all, :value, :name)) %>
+      </div>      
+    <div class="form-group">
+      <div class="col-md-4">
+        <label for="validationDefault01" class="form-label">Login</label>
+        <input type="text" class="form-control form-control-sm" name="login" id="login" placeholder="Login" required>
       </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
+      <div class="col-md-4">
+        <label for="validationDefault02" class="form-label">Password</label>
+        <input type="password" class="form-control form-control-sm" name="password" id="password" placeholder="Password" required>
+      </div>         
+    </div>    
+    <button type="submit" class="btn btn-primary btn-sm">Submit</button>
+  </div>
 <% end %>
-

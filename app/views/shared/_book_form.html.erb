@@ -1,28 +1,29 @@
 <%= form_tag('/book', method: :post, route: book_path) do |f| %>
-  <div class="col">
+  <div class="form-group row">  
+    <div class="col">
     <label for="Select_API_URL">API</label>
     <%= select_tag(:api_url,options_from_collection_for_select(BaseUrl.all, :value, :name)) %>
-  </div>
-  <div class="form-tid col-md-12">
+    </div>
+    <div class="form-tid col-md-12">
       <label for="validationDefault01" class="form-label">Reccomendation(Tid)</label>
       <input type="text" class="form-control" name="tid" placeholder="TID" required>
-  </div>
-  <div class="form-payer-name col-md-12">
+    </div>
+    <div class="form-payer-name col-md-6">
       <label for="validationDefault01" class="form-label">Payer name</label>
-      <input type="text" class="form-control" name="payer_name" placeholder="Client name" required>
-  </div>
-  <div class="form-client-mail col-md-12">
+      <input type="text" class="form-control" name="payer_name" placeholder="Payer name" required>
+    </div>
+    <div class="form-client-mail col-md-6">
       <label for="validationDefault01" class="form-label">Client email </label>
       <input type="text" class="form-control" name="client_email" id="client_email" placeholder="Client email" required>
-  </div>
-  <div class="form-client-phone col-md-12">
+    </div>
+    <div class="form-client-phone col-md-6">
       <label for="validationDefault01" class="form-label">Client phone</label>
       <input type="text" class="form-control" name="client_phone" id="client_phone" placeholder="Client phone" required>
-  </div>
-  <div class="form-auth-key col-md-12">
+    </div>
+    <div class="form-auth-key col-md-6">
       <label for="validationDefault02" class="form-label">Authorization key</label>
       <input type="text" class="form-control" name="auth_key" placeholder="Authorization key" required>
-  </div>
+    </div>
     <div class="form-agent-fee col-md-6">
       <label for="AgentAffiliateFee">Agent comission</label>
       <input type="text" name="agent_affiliate_fee" class="form-control" placeholder="Agent comission">
@@ -31,8 +32,9 @@
       <label for="PartnerAffiliateFee">Partner comission</label>
       <input type="text" name="partner_affiliate_fee" class="form-control" placeholder="Partner comission">
     </div>      
-
-    <br>
+  </div>
+    
+  <br>
 
   <div class="passengers">
     <div class="passengers_fields">
@@ -95,9 +97,9 @@
         </div>
       </div>
     </div> 
-      <button type="button" class="btn btn-primary removePassenger">Delete passenger</button>  
-      <button type="button" class="btn btn-primary AddPassenger">Add passenger</button>                     
+      <button type="button" class="btn btn-primary AddPassenger">Add passenger</button>
+      <button type="button" class="btn btn-primary removePassenger">Delete passenger</button>                       
   </div> 
   <br>
-  <button class="btn btn-primary BookRequest" type="submit">Book</button>
+  <button class="btn btn-primary btn-sm" type="submit">Book</button>
 <% end %>

@@ -8,7 +8,17 @@ class SearchsController < ApplicationController
   def create
     @results = SearchRequest.new(request_params).post
     @results = JSON.parse(@results)
-   end
+
+    @sro = @results["data"]["sro"]   
+
+    @search_results = SearchResult.new(
+      api_url: params[:api_url],
+      sro: @sro,
+      auth_key: params[:auth_key],
+      lang: 'ru').post
+
+    @search_results = JSON.parse(@search_results)
+  end
 
   private
 

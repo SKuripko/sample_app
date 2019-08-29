@@ -13,7 +13,6 @@ Rails.application.routes.draw do
   match '/help',    to: 'static_pages#help',      via: 'get'
 
   resources :authorization_keys, only: %i[new create]
-  resources :base_urls
   match '/authorization', to: 'authorization_keys#new',    via: 'get'
   match '/authorization', to: 'authorization_keys#create', via: 'post'
   match '/search',        to: 'searchs#new',               via: 'get'
@@ -36,7 +35,9 @@ Rails.application.routes.draw do
   match '/cancel',        to: 'cancel_bookings#create',    via: 'post'
   match '/payment',       to: 'payment_bookings#new',      via: 'get'
   match '/payment',       to: 'payment_bookings#create',   via: 'post'
-  match '/add_url',       to: 'base_urls#new',             via: 'get'
+
+  resources :base_urls
+  match '/base_urls',      to: 'base_urls#create',          via: 'post'
 
   resources :hits, only: %i[index]
   #     hits GET    /hits(.:format)                                                                          hits#index   read collection GET

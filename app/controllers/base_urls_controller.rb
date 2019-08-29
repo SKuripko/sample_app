@@ -1,6 +1,9 @@
 # frozen_string_literal: true
 
 class BaseUrlsController < ApplicationController
+  def index
+  end
+
   def show; end
 
   def new
@@ -20,6 +23,9 @@ class BaseUrlsController < ApplicationController
   private
 
   def api_url_params
-    params.require(:base_url).permit(:name, :value)
-   end
+    {
+      name:  params[:name],
+      value: params[:value]
+    }  
+  end
 end

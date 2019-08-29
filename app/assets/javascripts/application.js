@@ -16,6 +16,8 @@
 //= require bootstrap
 //= require turbolinks
 //= require bootstrap-datepicker
+//= require select2
+//= require datatables
 //= require_tree .
 
 $(document).on('turbolinks:load', function(){
@@ -105,13 +107,93 @@ anychart.onDocumentReady(function() {
     chart.draw();
 });
 
+
 $(document).ready(function() {
-  $('#channel').autocomplete({
-    max: 15,
-    source: '/channels',
-  })
+    $('#channel').select2();
+    theme:"bootstrap"
 });
 
 
+anychart.onDocumentReady(function () {
+    // create pie chart with passed data
+  var data = [
+    {x: "TUA", value: gon.hits.total.provider_hits.TUA},
+    {x: "VTRIP", value: gon.hits.total.provider_hits.VTRIP},
+    {x: "DTRIP", value: gon.hits.total.provider_hits.DTRIP},
+    {x: "SFA", value: gon.hits.total.provider_hits.SFA}
+  ];  
+
+  // create a pie chart and set the data
+  chart = anychart.pie(data);  
+
+  chart.title('Hit statistics by provider'); 
+  /* set the inner radius
+  (to turn the pie chart into a doughnut chart)*/
+  chart.innerRadius("50%");  
+
+  // set the container id
+  chart.container("hits");  
+  chart.legend().position("left");
+  chart.legend().itemsLayout("vertical");  
+
+  // initiate drawing the chart
+  chart.draw();
+});
 
 
+anychart.onDocumentReady(function () {
+    // create pie chart with passed data
+  var data = [
+    {x: "TUA", value: gon.hits.total.provider_books.TUA},
+    {x: "VTRIP", value: gon.hits.total.provider_books.VTRIP},
+    {x: "DTRIP", value: gon.hits.total.provider_books.DTRIP},
+    {x: "SFA", value: gon.hits.total.provider_books.SFA}
+  ];  
+
+  // create a pie chart and set the data
+  chart = anychart.pie(data);  
+
+  chart.title('Book statistics by provider'); 
+  /* set the inner radius
+  (to turn the pie chart into a doughnut chart)*/
+  chart.innerRadius("50%");  
+
+  // set the container id
+  chart.container("books");
+  chart.legend().position("left");
+  chart.legend().itemsLayout("vertical");  
+
+  // initiate drawing the chart
+  chart.draw();
+});
+
+anychart.onDocumentReady(function () {
+    // create pie chart with passed data
+  var data = [
+    {x: "TUA", value: gon.hits.total.provider_pays.TUA},
+    {x: "VTRIP", value: gon.hits.total.provider_pays.VTRIP},
+    {x: "DTRIP", value: gon.hits.total.provider_pays.DTRIP},
+    {x: "SFA", value: gon.hits.total.provider_pays.SFA}
+  ];  
+
+  // create a pie chart and set the data
+  chart = anychart.pie(data);  
+
+  chart.title('Pay statistics by provider'); 
+  /* set the inner radius
+  (to turn the pie chart into a doughnut chart)*/
+  chart.innerRadius("50%");  
+
+  // set the container id
+  chart.container("pays");
+  chart.legend().position("left"); 
+  chart.legend().itemsLayout("vertical");   
+
+  // initiate drawing the chart
+  chart.draw();
+});
+
+
+$(document).ready(function() {
+  $('#results').DataTable();
+});

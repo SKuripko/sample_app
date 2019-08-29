@@ -28,3 +28,4 @@ Rails.application.config.assets.precompile += %w[searchs.js]
 Rails.application.config.assets.precompile += %w[passenger_genetor.js]
 Rails.application.config.assets.precompile += %w[passenger_generator.js]
 Rails.application.config.assets.precompile += %w[hits.js]
+Rails.application.config.assets.precompile += %w( channels.js )

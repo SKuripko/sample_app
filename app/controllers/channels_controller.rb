@@ -6,3 +6,4 @@ class ChannelsController < ApplicationController
     render json: @channel.map(&:code)
   end
 end
+

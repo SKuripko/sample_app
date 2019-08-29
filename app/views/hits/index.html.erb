@@ -2,12 +2,13 @@
 <div class="row">
 	<%= render 'shared/sidebar_form' %>	
 	<div class="col-md-9">
-		<%= render 'shared/hit_form' %>	
-        <table id="results" class="table">
+		<%= render 'shared/hit_form' %>	                                          
+        <table id="results" class="table table-bordered table-hover" width="100%" cellspacing="0">	
           <thead>
             <tr>
               <th scope="col">Total</th>
               <th scope="col">Supplier</th>
+              <th scope="col">Second Supplier</th>
               <th scope="col">GDS ID</th>
               <th scope="col">Booking status</th>
               <th scope="col">Total Book</th>              
@@ -23,7 +24,14 @@
           <% @items[:items].each do |item|%>      	  	
               <tr>
                  <td><%= item[:hit] %></td>
-                 <td><%= link_to item[:supplier_code], supplier_code: item[:supplier_code], date_from: @date_from, date_to: @date_to, channel: @channel %></td>
+                 <td>
+                 		<%= link_to item[:supplier_code], supplier_code: item[:supplier_code], date_from: @date_from, date_to: @date_to, channel: @channel %>
+                 </td>
+                 <td>
+                 	<% if item[:second_validating_supplier].present? %>
+                 	<%= link_to item[:second_validating_supplier], second_validating_supplier: item[:second_validating_supplier], date_from: @date_from, date_to: @date_to, channel: @channel %>
+                 	<% end %>	
+                 	</td>
                  <td><%= item[:gds_id] %></td>
                  <td><%= item[:book_status] %></td>
                  <td><%= item[:total_book] %></td>                 
@@ -31,12 +39,18 @@
                  <td><%= item[:pay_status] %></td>
                  <td><%= item[:total_pay] %></td>
                  <td><%= item[:payment_percent].round(2) %>%</td>                                  
-                 <td><%= link_to item[:provider_name], provider_name: item[:provider_name], date_from: @date_from, date_to: @date_to %></td>
+                 <td>
+                 	<% if item[:provider_name].present? %>	
+                 	<%= link_to item[:provider_name], provider_name: item[:provider_name], date_from: @date_from, date_to: @date_to, channel: @channel %>
+                 	<% end %>	
+                 	</td>
                  <td><%= item[:channel] %></td>
               </tr>
               <% end %>
+          </tbody>              
               <tr>
                  <td><%= @items[:total][:hits] %></td>
+                 <td>&nbsp;</td>
                  <td>&nbsp;</td>
                  <td>&nbsp;</td>
                  <td>&nbsp;</td>
@@ -48,7 +62,6 @@
                  <td>&nbsp;</td>
                  <td>&nbsp;</td>
               </tr>                                       
-          </tbody>
-        </table>						
+        </table>					
 	</div>
 </div>
