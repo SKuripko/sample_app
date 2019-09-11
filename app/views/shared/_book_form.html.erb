@@ -1,19 +1,19 @@
-<%= form_tag('/book', method: :post, route: book_path) do |f| %>
+<%= form_tag('/book', method: :post, route: book_path, onSubmit: 'saveBookSettings()') do |f| %>
   <div class="form-group row">  
     <div class="col">
-    <label for="Select_API_URL">API</label>
-    <%= select_tag(:api_url,options_from_collection_for_select(BaseUrl.all, :value, :name)) %>
+      <label for="Select_API_URL">API</label>
+        <%= select_tag(:api_url, options_from_collection_for_select(BaseUrl.all, :value, :name), style: "width: 300px") %>
     </div>
     <div class="form-tid col-md-12">
       <label for="validationDefault01" class="form-label">Reccomendation(Tid)</label>
-      <input type="text" class="form-control" name="tid" placeholder="TID" required>
+      <input type="text" class="form-control" name="tid" id="tid" placeholder="TID" required>
     </div>
     <div class="form-payer-name col-md-6">
       <label for="validationDefault01" class="form-label">Payer name</label>
-      <input type="text" class="form-control" name="payer_name" placeholder="Payer name" required>
+      <input type="text" class="form-control" name="payer_name" id="payer_name" placeholder="Payer name" required>
     </div>
     <div class="form-client-mail col-md-6">
-      <label for="validationDefault01" class="form-label">Client email </label>
+      <label for="validationDefault01" class="form-label">Client email</label>
       <input type="text" class="form-control" name="client_email" id="client_email" placeholder="Client email" required>
     </div>
     <div class="form-client-phone col-md-6">
@@ -22,7 +22,7 @@
     </div>
     <div class="form-auth-key col-md-6">
       <label for="validationDefault02" class="form-label">Authorization key</label>
-      <input type="text" class="form-control" name="auth_key" placeholder="Authorization key" required>
+      <input type="text" class="form-control" name="auth_key" id="auth_key" placeholder="Authorization key" required>
     </div>
     <div class="form-agent-fee col-md-6">
       <label for="AgentAffiliateFee">Agent comission</label>

@@ -18,6 +18,7 @@
 //= require bootstrap-datepicker
 //= require select2
 //= require datatables
+//= require ace-rails-ap
 //= require_tree .
 
 $(document).on('turbolinks:load', function(){
@@ -109,10 +110,16 @@ anychart.onDocumentReady(function() {
 
 
 $(document).ready(function() {
-    $('#channel').select2();
-    theme:"bootstrap"
+    $('#channel').select2({
+    placeholder: '',
+    });
 });
 
+$(document).ready(function() {
+    $('#api_url').select2({
+        placeholder: '',
+    });
+});
 
 anychart.onDocumentReady(function () {
     // create pie chart with passed data
@@ -196,4 +203,17 @@ anychart.onDocumentReady(function () {
 
 $(document).ready(function() {
   $('#results').DataTable();
+});
+
+$(document).ready(function() {
+    if ($("#js").lentgh) {
+        var editor = ace.edit('js');
+        editor.setTheme('ace/theme/textmate');
+        editor.session.setMode('ace/mode/ruby');
+        editor.setOptions({
+            readOnly: true,
+            highlightActiveLine: false,
+            highlightGutterLine: false
+        });
+    }
 });

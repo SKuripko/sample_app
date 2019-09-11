@@ -1,6 +1,7 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    ace-rails-ap (4.2)
     actioncable (5.2.1)
       actionpack (= 5.2.1)
       nio4r (~> 2.0)
@@ -340,6 +341,7 @@ PLATFORMS
   x86-mswin32
 
 DEPENDENCIES
+  ace-rails-ap
   bcrypt-ruby
   bootsnap (>= 1.1.0)
   bootstrap (~> 4.3.1)

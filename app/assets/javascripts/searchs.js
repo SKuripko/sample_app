@@ -2,6 +2,14 @@
     loadSearchSettings();
   });
 
+  $(document).on('turbolinks:load', function () {
+      if ($("input:checked").length){
+        $('form input[name="segments[1][from]"]').prop("disabled", false);
+        $('form input[name="segments[1][to]"]').prop("disabled", false);
+        $('form input[name="segments[1][date]"]').prop("disabled", false);
+      }
+  });
+
   function loadSearchSettings() {
     $('#api_url').val(localStorage.api_url);    
     $('input[value="' + localStorage.agree + '"]').prop('checked', true);

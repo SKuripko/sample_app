@@ -7,17 +7,17 @@ class Hit < DevMaSchema
 
   def self.listing(params)
     items = select('
-      count(hit.id) as hit, 
-      hit.supplier_code, 
-      hit.second_validation_supplier as second_supplier, 
-      hit.gds_id, 
-      hit.book_status, 
-      count(hit.book_status) as total_book, 
-      hit.pay_status, 
-      count(hit.pay_status) as total_pay, 
-      hit.provider_name, 
+      count(hit.id) as hit,
+      hit.supplier_code,
+      hit.second_validation_supplier as second_supplier,
+      hit.gds_id,
+      hit.book_status,
+      count(hit.book_status) as total_book,
+      hit.pay_status,
+      count(hit.pay_status) as total_pay,
+      hit.provider_name,
       channel.code as code'
-    )
+                  )
     items = items.joins(:channel)
     items = items.where('channel.code  = ?', params[:channel]) if params[:channel].present?
     items = items.where('hit.created_at >= ?', params[:hit_date_from]) if params[:hit_date_from].present?
@@ -35,16 +35,16 @@ class Hit < DevMaSchema
       provider_hits[item.provider_name] ||= 0
       provider_hits[item.provider_name] += item.hit
     end
-    provider_books        = {}
+    provider_books = {}
     items.each do |item|
       provider_books[item.provider_name] ||= 0
       provider_books[item.provider_name] += item.total_book
     end
-    provider_pays         = {}
+    provider_pays = {}
     items.each do |item|
       provider_pays[item.provider_name] ||= 0
       provider_pays[item.provider_name] += item.total_pay
-    end        
+    end
     hits = items.map do |item|
       {
         hit:                        item.hit,
@@ -64,9 +64,9 @@ class Hit < DevMaSchema
     {
       items: hits,
       total: {
-        hits: total_hits,
-        pays: total_pays,
-        book: total_books,
+        hits:                  total_hits,
+        pays:                  total_pays,
+        book:                  total_books,
         total_book_percent:    hits.sum { |item| item[:book_percent] },
         total_payment_percent: hits.sum { |item| item[:payment_percent] },
         provider_hits:         provider_hits,

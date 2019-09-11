@@ -26,6 +26,6 @@ class BaseUrlsController < ApplicationController
     {
       name:  params[:name],
       value: params[:value]
-    }  
+    }
   end
 end

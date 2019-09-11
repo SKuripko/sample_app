@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class CancelBooking < BaseRequest
+class CancelBookingRequest < BaseRequest
   def path
     'avia/bookingCancel'
   end

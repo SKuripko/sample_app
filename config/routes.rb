@@ -2,7 +2,7 @@
 
 Rails.application.routes.draw do
   resources :users
-  resources :sessions, only: %i[new create destroy]
+  resources :sessions, only: %i(new create destroy)
   root 'static_pages#home'
   match '/signup',  to: 'users#new',              via: 'get'
   match '/signin',  to: 'sessions#new',           via: 'get'
@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   match '/contact', to: 'static_pages#contact',   via: 'get'
   match '/help',    to: 'static_pages#help',      via: 'get'
 
-  resources :authorization_keys, only: %i[new create]
+  resources :authorization_keys, only: %i(new create)
   match '/authorization', to: 'authorization_keys#new',    via: 'get'
   match '/authorization', to: 'authorization_keys#create', via: 'post'
   match '/search',        to: 'searchs#new',               via: 'get'
@@ -37,9 +37,9 @@ Rails.application.routes.draw do
   match '/payment',       to: 'payment_bookings#create',   via: 'post'
 
   resources :base_urls
-  match '/base_urls',      to: 'base_urls#create',          via: 'post'
+  match '/base_urls', to: 'base_urls#create', via: 'post'
 
-  resources :hits, only: %i[index]
+  resources :hits, only: %i(index)
   #     hits GET    /hits(.:format)                                                                          hits#index   read collection GET
   #          POST   /hits(.:format)                                                                          hits#create  create
   #  new_hit GET    /hits/new(.:format)                                                                      hits#new     pre_create      GET

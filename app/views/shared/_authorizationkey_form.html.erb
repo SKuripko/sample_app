@@ -3,7 +3,7 @@
   <div class="authorization_fields">
       <div class="col-md-3">
         <label for="Select_API_URL">API</label>
-        <%= select_tag(:api_url, options_from_collection_for_select(BaseUrl.all, :value, :name)) %>
+        <%= select_tag(:api_url, options_from_collection_for_select(BaseUrl.all, :value, :name), style: "width: 300px") %>
       </div>      
     <div class="form-group">
       <div class="col-md-4">

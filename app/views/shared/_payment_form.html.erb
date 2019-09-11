@@ -2,7 +2,7 @@
   <div class="payments_fields">
     <div class="col">
       <label for="Select_API_URL">API</label>
-      <%= select_tag(:api_url,options_from_collection_for_select(BaseUrl.all, :value, :name)) %>
+      <%= select_tag(:api_url, options_from_collection_for_select(BaseUrl.all, :value, :name), style: "width: 300px") %>
     </div>    
     <div class="form-group payments">
       <div class="col-md-4">
