@@ -29,34 +29,34 @@ development:
   encoding: utf8
   database: my_develop
   pool: 5
-  username: skuripko
-  password: ke4map5S
+  username: 
+  password: 
 
 dev_ma:
   adapter: postgresql
   encoding: utf8
   database: bol
-  username: bol
-  password: 8u4w1y8fMdaK6HFc6Zbu
-  host: 10.2.4.193
+  username: 
+  password: 
+  host: 
   port: 5432
   schema_search_path: "tol"  
 
 # test:
 #   adapter: postgresql
 #   encoding: utf8
-#   database: QCCR2O
+#   database: 
 #   pool: 5
-#   username: skuripko
-#   password: ke4map5S
+#   username: 
+#   password: 
 
 # production:
 #   adapter: postgresql
 #   encoding: utf8
-#   database: QCCR2O
+#   database: 
 #   pool: 5
-#   username: skuripko
-#   password: ke4map5S    
+#   username: 
+#   password:     
 
 #production:
 #  <<: *default
@@ -64,32 +64,32 @@ dev_ma:
 # default: &default
 #   #adapter: postgresql
 #   #encoding: utf8
-#   #database: gis_pre
+#   #database: 
 #   #username: postgres
-#   #password: 5hRxJl54cQ
-#   #host: 148.251.235.166
+#   #password: 
+#   #host: 
 #   adapter: postgresql
 #   encoding: utf8
 #   database: core
-#   username: s.kuripko
-#   password: Yxj698aHkDJ5oB
-#   host: 10.2.4.153
-#   port: 5432
+#   username: 
+#   password: 
+#   host: 
+#   port: 
 # #  pglog:
 #    adapter: postgresql
 #    encoding: utf8
-#    database: pglog
-#    username: postgres
-#    password: 5hRxJl54cQ
-#    host: 10.2.4.95
-#    port: 5432
+#    database: 
+#    username: 
+#    password: 
+#    host: 
+#    port: 
     
   # adapter: postgresql
   # encoding: utf8
   # database: gis
-  # username: mgrishko
+  # username: 
   # password:
-  # host: 127.0.0.1
+  # host: 
   # port: 5432
 
 # development:
